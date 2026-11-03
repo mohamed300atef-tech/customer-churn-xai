@@ -1,0 +1,61 @@
+{
+  "dataset": {
+    "rows": 7043,
+    "churn_rate": 0.2654,
+    "test_rows": 1409
+  },
+  "models": {
+    "Logistic Regression": {
+      "cv_roc_auc_mean": 0.8455,
+      "cv_roc_auc_std": 0.0122,
+      "test_roc_auc": 0.8416,
+      "test_pr_auc": 0.6343,
+      "test_recall@0.5": 0.7834,
+      "test_precision@0.5": 0.5026,
+      "test_f1@0.5": 0.6123
+    },
+    "Random Forest": {
+      "cv_roc_auc_mean": 0.8456,
+      "cv_roc_auc_std": 0.0089,
+      "test_roc_auc": 0.8407,
+      "test_pr_auc": 0.6513,
+      "test_recall@0.5": 0.7754,
+      "test_precision@0.5": 0.5341,
+      "test_f1@0.5": 0.6325
+    },
+    "XGBoost": {
+      "cv_roc_auc_mean": 0.8473,
+      "cv_roc_auc_std": 0.0107,
+      "test_roc_auc": 0.845,
+      "test_pr_auc": 0.661,
+      "test_recall@0.5": 0.7941,
+      "test_precision@0.5": 0.5201,
+      "test_f1@0.5": 0.6286
+    }
+  },
+  "selected_model": "XGBoost",
+  "decision_threshold": 0.15,
+  "at_threshold": {
+    "recall": 0.9572,
+    "precision": 0.3737,
+    "confusion_matrix": [
+      [
+        435,
+        600
+      ],
+      [
+        16,
+        358
+      ]
+    ],
+    "expected_cost": 1150.0,
+    "expected_cost_at_0.5": 1495.0,
+    "expected_cost_without_model": 4488.0,
+    "cost_reduction_vs_no_model": 0.7438
+  },
+  "cost_assumptions": {
+    "missed_churner": 12.0,
+    "retention_offer": 1.0
+  },
+  "oracle_threshold_on_test_for_reference": 0.19
+}
